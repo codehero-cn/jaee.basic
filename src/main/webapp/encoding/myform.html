@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>本页编码设置utf-8</h1>
+    
+    <h2>1.我的表单get提交</h2>
+    <form action="/encoding/GetInfoServlet"  method="get">
+        u:<input type="text" name="username" value="get提交"/><br/>
+        <input type="submit" value="提交"/>
+    </form>      
+    
+    <h2>2.我的表单tomcat7中get提交</h2>
+    <form action="/encoding/GetInfoServlet"  method="get">
+        u:<input type="text" name="username" value="tomcat7中get提交"/><br/>
+        <input type="submit" value="提交"/>
+    </form> 
+    
+    <h2>3.超链接测试</h2>
+    <a href="/encoding/GetInfoServlet?username=超链接测试">超链接字符乱码测试</a>
+    
+    <h2>4.sendRedirect测试</h2>
+      <form action="/encoding/GetInfoServlet"  method="get">
+        u:<input type="text" name="username" value="sendRedirect测试"/><br/>
+        <input type="submit" value="sendRedirect测试"/>  
+    </form>
+
+    <h2>5.我的表单post提交</h2>
+    <form action="/encoding/GetInfoServlet"  method="post">
+        u:<input type="text" name="username" value="post提交"/><br/>
+        <input type="submit" value="提交"/>
+    </form>   
+</body>
+</html>

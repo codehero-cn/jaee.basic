@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- 配置Web应用配置文件的根元素，并指定配置文件的Schema信息 -->   
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<icon> <!-- 此图标是应用、servlet等自身的图标，只在（支持的）控制台等地方显示-->
+	   <small-icon>/imgs/Superman.png</small-icon> <!-- 16X16的图像文件 -->
+	   <large-icon></large-icon>  <!-- 32X32的图像文件 -->
+	</icon>
+	<!-- 没下面也有用 ,那是因为web容器中有默认的-->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+        
+    <!-- ###项目：包 cn.codehero.jaee.basic.servlet -->    
+    <servlet>
+        <servlet-name>MyFirstServlet</servlet-name>
+        <servlet-class>cn.codehero.jaee.basic.servlet.MyFirstServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyFirstServlet</servlet-name>
+        <url-pattern>/servlet/MyFirstServlet</url-pattern>
+    </servlet-mapping>
+    
+
+        
+    
+    <!--项目：cn.codehero.jaee.basic.servletconfig  servletconfig的使用  -->
+    <servlet>
+        <servlet-name>ServletConfigTest</servlet-name>
+        <servlet-class>cn.codehero.jaee.basic.servletconfig.ServletConfigTest</servlet-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>author</param-name>
+            <param-value>eleven</param-value>
+        </init-param>
+    </servlet>
+   <servlet-mapping>
+        <servlet-name>ServletConfigTest</servlet-name>
+        <url-pattern>/ServletConfigTest</url-pattern>
+   </servlet-mapping>
+   
+
+   
+</web-app>

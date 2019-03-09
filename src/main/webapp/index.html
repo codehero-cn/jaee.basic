@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>cn.codehero.jaee.basic项目首页</title>    
+<xmp theme="united" style="display:none;">
+##[\[主页\]](/)         [\[测试tomcat正常否?\]](/test)    [\[用于测试jsp\]](/jsp/index.jsp)  
+说明:  
+1.能用注解尽量用注解  
+2.使用strapdown.js   
+3.源码文件夹:src/main/java、uc/main/java  
+4./webapp-tomcat内是用于build.gradle的文件  
+###cn.codehero.jaee.basic.mywebserver 1.一个简单的web服务器山寨版 2.run as java application
+###cn.codehero.jaee.basic.servlet
+[/servlet/MyFirstServlet](/servlet/MyFirstServlet):1.实现接口servlet的方式,开发一个Servlet  
+配置:web.xml
+
+###cn.codehero.jaee.basic.genericservlet  功能:实现GenericServlet的方式，开发一个Servlet
+[/genericservlet/MyGenericServlet](/genericservlet/MyGenericServlet)
+
+###cn.codehero.jaee.basic.httpservlet
+[/httpservlet/myhttpservlet.html](/httpservlet/myhttpservlet.html)   显示页面myhttpservlet.html 点“测试”后进行post提交
+webapp/httpservlet/myhttpservlet.html
+   
+[/httpservlet/MyHttpServlet](/httpservlet/MyHttpServlet)  get提交
+功能:servlet继承Httpservlet,实现HttpServlet的方法,开发一个Servlet,显示helloword和当前日期.测试Servlet单例.
+
+###cn.codehero.jaee.basic.initservlet  功能:load-on-startup的使用,获得web项目根目录
+[/MyInitServlet](/MyInitServlet)    观察web服务器后台的输出  
+功能:  
+1.实验<load-on-startup>在后台加载,init()函数  
+2.通过ServletContext.getRealPath,获得web项目根目录
+3.通过request.getSession().getServletContext.getRealPath("/"),获得web项目根目录
+
+###cn.codehero.jaee.basic.servletconfig  功能:servletconfig的使用,获取web.xml中设置的参数
+[/ServletConfigTest](/ServletConfigTest)  
+Webapp:/WEB-INF/web.xml
+
+###cn.codehero.jaee.basic.thread  使用线程来模拟定时发邮件,servlet加载时进行一些初始化
+
+###cn.codehero.jaee.basic.request request用法  
+[/request/index.html](/request/index.html)  
+[/request/login.jsp](/request/login.jsp)   
+webapp:/request/index.html  
+webapp:/request/login.jsp  
+1.功能:request对象用法,如防盗链等用法   2.功能:登录举例
+
+###cn.codehero.jaee.basic.response response用法1.演示回送内容2.演示下载文件
+[/response/测试.zip](/response/测试.zip)  
+webapp:/response/测试.zip   
+webapp:/imgs/1.jpg  2.jpg
+
+###cn.codehero.jaee.basic.transferdata 页面之间传递数据用法
+[/transferdata/Index](/transferdata/Index)  用于测试的目录页  
+
+###cn.codehero.jaee.basic.encoding  字符编码专题
+[/encoding/myform.html](/encoding/myform.html)  
+webapp:/encoding/myform.html
+
+###cn.codehero.jaee.basic.db 数据库实验,简单的用户管理系统
+[/MainFrame](/MainFrame)  
+包下/db/jaeebasicdb.sql  生成数据库
+
+###子项目cn.codehero.jaee.basic.fsl  功能:1.Filter,Listener,Servlet启动的先后顺序2.通过web.xml给servlet赋值
+配置:/META-INF/web-fragment.xml  子项目打成jar包，被主项目依赖  
+                                                                                 
+</xmp>
+<script type="text/JavaScript" src="/script/strapdown02/strapdown.js"></script> 

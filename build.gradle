@@ -1,0 +1,50 @@
+apply plugin: 'idea'
+apply plugin: 'war'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'   //引入getty
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+allprojects{
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+sourceSets{
+    main{
+        java{
+          srcDirs = ['src/main/java','src/main/resources','uc/main/java','uc/main/resources']
+        }
+    }
+}    
+
+dependencies {
+    //compile project(':cn.codehero.jaee.basic.fsl')  //如要启用则去掉本行注释
+    runtime 'jstl:jstl:1.2'  
+    runtime 'org.wisdom-framework:mysql-connector-java:5.1.34_1' 
+    providedCompile  'javax.servlet:javax.servlet-api:3.1.0'
+    compile 'org.mybatis:mybatis:3.2.4'
+    //testCompile 'junit:junit:4.11'
+    compile 'junit:junit:4.11'
+    compile 'log4j:log4j:1.2.17'
+}
+
+gretty {
+    // serlvetContainer 支持 jetty7/8/9，tomcat7/8
+    httpPort = 81  // 端口默认8080
+    //servletContainer = 'jetty9'
+    servletContainer = 'tomcat8' 
+    //contextConfigFile = 'F:/dropbox/pro_base/cn.codehero.jaee.basic/context.xml' //可以配置tomcat,没实际用出来
+    contextPath = ''     //要么是'',要么是以"/"开头的一个目录,就是访问eg:http://localhost/contextPath 设置根路径，否则默认为项目名称
+}
+
+task myjavadoc(type: Javadoc) {
+    source = sourceSets.main.allJava
+    classpath = project.sourceSets.main.compileClasspath
+    options.encoding = "UTF-8"
+    options.charSet = "UTF-8"
+    options.author = "true"
+    options.showAll()
+ }
+ 

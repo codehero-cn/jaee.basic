@@ -1,0 +1,32 @@
+<!-- 项目:包cn.codehero.jaee.basic.fls Filter,Listener,Servlet启动的先后顺序 -->
+<web-fragment>
+	<filter>
+		<filter-name>HelloFilter</filter-name>
+		<filter-class>cn.codehero.jaee.basic.fsl.HelloFilter</filter-class>
+		<init-param>
+			<param-name>seconds</param-name>
+			<param-value>5</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>HelloFilter</filter-name>
+		<url-pattern>/fsl</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>HelloServlet</servlet-name>
+		<servlet-class>cn.codehero.jaee.basic.fsl.HelloServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		<url-pattern>/fsl/HelloServlet</url-pattern>
+	</servlet-mapping>
+
+	<listener>
+		<listener-name>HelloListener</listener-name>
+		<listener-class>cn.codehero.jaee.basic.fsl.HelloListener
+		</listener-class>
+	</listener>
+</web-fragment>
+    
