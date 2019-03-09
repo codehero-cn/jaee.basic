@@ -1,0 +1,1 @@
+todo 用了enncoding中的GetUtf8

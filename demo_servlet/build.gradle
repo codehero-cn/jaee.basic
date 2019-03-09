@@ -1,0 +1,18 @@
+apply plugin: 'war'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'   //引入getty
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+allprojects{
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+
+gretty {  
+    httpPort = 8000  // 端口默认8080
+    servletContainer = 'jetty9'  //jetty与tomcat有时会不兼容的情况发生
+    contextPath = ''   
+}

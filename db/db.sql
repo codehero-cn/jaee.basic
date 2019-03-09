@@ -2,7 +2,7 @@
 DROP DATABASE IF EXISTS `jaeebasicdb`;
 CREATE DATABASE `jaeebasicdb`  CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci ;
 
-USE `jaeebasicdb`;
+USE `javaee.basic`;
 /*创建数据库后，在数据库中执行此sql文件 */
 
 /*Table structure for table `users` */
