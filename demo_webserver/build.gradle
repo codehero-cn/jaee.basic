@@ -1,0 +1,23 @@
+apply plugin :'war'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'   //引入getty
+
+
+
+
+dependencies {
+ 
+    
+    runtime 'javax.servlet.jsp.jstl:jstl:1.2'
+    providedCompile  'javax.servlet:javax.servlet-api:3.1.0'
+}
+
+
+
+gretty {
+    httpPort = 8000  // 端口默认8080
+    // serlvetContainer 支持 jetty7/8/9，tomcat7/8
+    // contextPath 设置根路径，默认为项目名称
+    //servletContainer = 'tomcat8'
+    servletContainer = 'jetty9'  //jetty与tomcat有时会不兼容的情况发生
+    contextPath = '' //contextPath = '/'
+}

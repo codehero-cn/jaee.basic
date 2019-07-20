@@ -1,3 +1,0 @@
-rootProject = "tool-swagger"
-includeFlat("demo_mywebserver")
-includeFlat("demo_request")

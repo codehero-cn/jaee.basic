@@ -1,0 +1,18 @@
+apply plugin: 'war'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'io.springfox:springfox-swagger2:2.9.2'
+    compile 'io.springfox:springfox-swagger-ui:2.9.2'
+    providedCompile  'javax.servlet:javax.servlet-api:3.1.0'
+}
+
+gretty {
+
+    httpPort = 8000  // 端口默认8080
+    servletContainer = 'jetty9'
+    contextPath = ''
+}

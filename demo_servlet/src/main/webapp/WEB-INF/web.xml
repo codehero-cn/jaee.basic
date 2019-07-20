@@ -4,21 +4,7 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
-	<icon> <!-- 此图标是应用、servlet等自身的图标，只在（支持的）控制台等地方显示-->
-	   <small-icon>/imgs/Superman.png</small-icon> <!-- 16X16的图像文件 -->
-	   <large-icon></large-icon>  <!-- 32X32的图像文件 -->
-	</icon>
-	<!-- 没下面也有用 ,那是因为web容器中有默认的-->
-    <!--
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
-     -->
-    <error-page> <!--当系统出现404错误，跳转到页面nopage.html-->
-        <error-code>404</error-code>
-        <location>/nopage.html</location>
-    </error-page>
-    
+	
     
     <!-- ###项目：包 cn.codehero.jaee.basic.servlet -->    
     <servlet>
